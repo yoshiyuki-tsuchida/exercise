@@ -1,0 +1,86 @@
+{% extends "base.twig" %}
+{% block title %}売上集計画面{% endblock %}
+{% block menu %}
+              <li class="active"><a href="/">Home</a></li>
+{% endblock %}
+{% block content %}
+        <div class="row">
+            <div class="span6 offset3">
+        
+
+		
+		<h1>売上集計（コンテンツ別集計）</h1>
+
+
+	        <form action="/support/contact" method="post" class="form-horizontal well">
+
+
+		      <select name="year" style="width:70px">
+		      	     {% for i in range(1980,2020) %}
+			     <option>{{i}}</option>
+			     {% endfor %}
+		      </select>
+		      年
+		      <select name="year" style="width:50px">
+		      	     {% for i in range(1,12) %}
+			     <option>{{i}}</option>
+			     {% endfor %}
+		      </select>
+		      月
+		      <select name="year" style="width:50px">
+		      	     {% for i in range(1,31) %}
+			     <option>{{i}}</option>
+			     {% endfor %}
+		      </select>
+		      日　～　
+
+		      <select name="year" style="width:70px">
+		      	     {% for i in range(1980,2020) %}
+			     <option>{{i}}</option>
+			     {% endfor %}
+		      </select>
+		      年
+		      <select name="year" style="width:50px">
+		      	     {% for i in range(1,12) %}
+			     <option>{{i}}</option>
+			     {% endfor %}
+		      </select>
+		      月
+		      <select name="year" style="width:50px">
+		      	     {% for i in range(1,31) %}
+			     <option>{{i}}</option>
+			     {% endfor %}
+		      </select>
+		      日
+
+
+		      <div align="center" style="margin:25px 0 0 0">
+
+
+		      <table border="1" cellpadding="5" width="200" 
+  		      	     summary="身近な果物を分類整理した表。
+			     1列目が果物名、2列目が味の特徴、3列目が色">
+
+  			     <tr  style="background:#ccccff" >
+				<th>コンテンツ</th>
+				<th>売上</th>
+  			     </tr>
+  			     {% for i in range(0,5) %}
+			     <tr align="right" >
+				<td>{{i}}</td>
+    				<td>{{i*i}}</td>
+  			     </tr>
+			     {% endfor %}
+  		
+	             </table>
+		     </div>
+
+		     <div align="right">
+		     	  <span style="border-bottom:solid 3px #ff0000;">売上合計{{i+100}}円</span>
+		     </div>
+
+                </form>
+            </div>
+        </div>
+{% endblock %}
+

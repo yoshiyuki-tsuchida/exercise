@@ -1,0 +1,65 @@
+{% extends "base.twig" %}
+{% block title %}売上集計画面{% endblock %}
+{% block menu %}
+<li class="active"><a href="/">Home</a></li>
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="span6 offset3">
+        <h1>売上集計（日別集計）</h1>
+        <form action="/admin/summary/day" method="get" class="form-horizontal well">
+            <select name="from_year" style="width:70px">
+                {% for i in range(1980,2020) %}
+                <option>{{i}}</option>
+                {% endfor %}
+            </select>
+            年
+            <select name="from_month" style="width:50px">
+                {% for i in range(1,12) %}
+                <option>{{i}}</option>
+                {% endfor %}
+            </select>
+            月
+            <select name="from_date" style="width:50px">
+                {% for i in range(1,31) %}
+                <option>{{i}}</option>
+                {% endfor %}
+            </select>
+            日　～　
+
+            <select name="to_year" style="width:70px">
+                {% for i in range(1980,2020) %}
+                <option>{{i}}</option>
+                {% endfor %}
+            </select>
+            年
+            <select name="to_month" style="width:50px">
+                {% for i in range(1,12) %}
+                <option>{{i}}</option>
+                {% endfor %}
+            </select>
+            月
+            <select name="to_date" style="width:50px">
+                {% for i in range(1,31) %}
+                <option>{{i}}</option>
+                {% endfor %}
+            </select>
+            日
+            <div>
+                <input type="submit" value="絞込む" />
+            </div>
+
+            <div align="center" style="margin:25px 0 0 0">
+                <table class="table table-striped">
+                    <tr><th>日付</th><th>売上</th></tr>
+                    {% for i in sales %}
+                    <tr><td>{{i.date}}</td><td >{{i.sales}}円</td></tr>
+                    {% endfor %}
+                    <tr><th>計</th><th>{{sales_sum}}円</th></tr>
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

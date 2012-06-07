@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataset>
+    <user name="test1" email="test1" password="test1" salt='test' birthday="2000-01-01" privilege="0" created_at="2012-01-01 00:00:00" updated_at="2012-02-02 00:00:00"/>
+    <user name="test2" email="test2" password="test2" salt='test' birthday="2000-01-01" privilege="0" created_at="2012-01-01 00:00:00" />
+    <user name="testuser" email="testuser" password="testuser" salt='test' birthday="2000-01-01" privilege="0" created_at="2012-01-01 00:00:00" />
+    <user name="admin" email="admin@admin.com" password="ksT0j2JOa00FBSnNvbBXOQ/SeNiru8iKOL0wtzQmozY=" salt='aEcpLUIoNV2rIRpKKF+3Q93uIoTr/XvNBidTwrjcsGA=' birthday="2012-05-24" privilege="1" created_at="2012-01-01 00:00:00" />
+</dataset>

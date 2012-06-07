@@ -1,0 +1,49 @@
+{% extends "base.twig" %}
+{% block title %}ログイン{% endblock %}
+{% block login %}
+                <li class="active"><a href="/user/login">ログイン</a></li>
+{% endblock %}
+{% block content %}
+        <div class="row">
+            <div class="span6 offset3">
+                <form action="/user/login" method="POST" class="form-horizontal well">
+                    {% if errors.user_name %}
+                    <div class="control-group error">
+                        <label class="control-label" for="user_name">ユーザー名</label>
+                        <div class="controls">
+                            <input id="user_name" name="user_name" type="text" class="span3" value="{{ params.user_name }}" />
+                            <span class="help-inline">{{ errors.user_name }}</span>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="control-group">
+                        <label class="control-label" for="user_name">ユーザー名</label>
+                        <div class="controls">
+                            <input id="user_name" name="user_name" type="text" class="span3" value="{{ params.user_name }}" />
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if errors.password %}
+                    <div class="control-group error">
+                        <label class="control-label" for="password">パスワード</label>
+                        <div class="controls">
+                            <input id="password" name="password" type="password" class="span3" />
+                            <span class="help-inline">{{ errors.password }}</span>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="control-group">
+                        <label class="control-label" for="password">パスワード</label>
+                        <div class="controls">
+                            <input id="password" name="password" type="password" class="span3" />
+                        </div>
+                    </div>
+                    {% endif %}
+                    <div class="controls">
+                        <button id="login" type="submit" class="btn btn-primary">ログイン</button>
+                        新規登録は<a href="/user/register">こちら</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+{% endblock %}

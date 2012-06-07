@@ -1,0 +1,21 @@
+{% extends "base.twig" %}
+{% block title %}-管理画面- Voyage EC{% endblock %}
+{% block menu %}
+              <li class="active"><a href="/">Home</a></li>
+{% endblock %}
+{% block content %}
+    <div class="page-header">
+        <h1>管理画面</h1>
+    </div>
+
+    <div class="page-content">
+	<ul>
+		<li><a href="/admin/summary/day" >売上集計データ（日別集計）</a></li>
+		<li><a href="/admin/summary/content" >売上集計データ（コンテンツ別集計）</a></li>
+		<li><a href="/admin/contactlist" >お問い合わせ管理</a></li>
+	</ul>
+	<img src="{{content.image_path}}" />
+    </div>
+
+{% endblock %}
+

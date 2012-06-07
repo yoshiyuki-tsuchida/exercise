@@ -1,0 +1,138 @@
+{% extends "base.twig" %}
+{% block title %}コンタクト{% endblock %}
+{% block menu %}
+              <li class="active"><a href="/">Home</a></li>
+{% endblock %}
+{% block content %}
+        <div class="row">
+            <div class="span6 offset3">
+        
+
+		
+		<h1>お問い合わせ</h1>
+
+
+	        <form action="/support/contact" method="post" class="form-horizontal well">
+
+
+		{% if errors.contact_title %}
+		　　<div class="control-group error">
+                        <label class="control-label" for="contact_title">タイトル（20字以下）</label>
+                        <div class="controls">
+                            <input id="contact_title" name="contact_title" type="text" class="span3" value="{{ contact.contact_title }}" /><br />
+			    <span class="help-inline">{{ errors.contact_title }}</span>
+                        </div>
+                    </div>
+         	{% else %}	
+		　　<div class="control-group">
+                        <label class="control-label" for="contact_title">タイトル（20字以下）</label>
+                        <div class="controls">
+                            <input id="contact_title" name="contact_title" type="text" class="span3" value="{{ contact.contact_title }}" /><br />
+			   <span class="help-inline"></span>			     
+                        </div>
+                    </div>
+		{% endif %}
+		{% if errors.contact_body %}
+	            <div class="control-group error">
+                        <label class="control-label" for="contact_body">内容（400字以下）</label>
+                        <div class="controls">
+                    	     <textarea id="contact_body" class="span3" name="contact_body" name="MSG"  cols=100 rows=4>{{contact.contact_body}}</textarea><br/>
+			     <span class="help-inline">{{ errors.contact_body }}</span>
+                        </div>
+                    </div>
+		{% else %}
+	            <div class="control-group">
+                        <label class="control-label" for="contact_body">内容（400字以下）</label>
+                        <div class="controls">
+                    	     <textarea id="contact_body" class="span3" name="contact_body" name="MSG" cols=100 rows=4>{{contact.contact_body}}</textarea><br />
+			     <span class="help-inline"></span>
+                        </div>
+                    </div>
+		{% endif %}
+		{% if errors.contact_type %}
+	            <div class="control-group error">
+                          <label class="control-label" for="contact_type">区分</label>
+			  <div class="controls"> 
+		    	     <select id="contact_type" name="contact_type">
+ 		    	     <option value="1"  {% if contact.contact_type == 1 %} {{"selected"}} {% endif %} >商品に関するお問い合わせ</option>
+  			     <option value="2"  {% if contact.contact_type == 2 %} {{"selected"}} {% endif %}>購入に関するお問い合わせ</option>
+		    	     </select>
+			     <br />
+			     <span class="help-inline">{{ errors.contact_type }}</span>
+			  </div>
+		    </div>
+		{% else %}
+	            <div class="control-group">
+                          <label class="control-label" for="contact_type">区分</label>
+			  <div class="controls"> 
+		    	  <select id="contact_type" name="contact_type">
+ 		    	     <option value="1"  {% if contact.contact_type == 1 %} {{"selected"}} {% endif %} >商品に関するお問い合わせ</option>
+  			     <option value="2"  {% if contact.contact_type == 2 %} {{"selected"}} {% endif %}>購入に関するお問い合わせ</option>
+		    	     </select>
+			     <br />
+			     <span class="help-inline"></span>
+			  </div>
+		    </div>
+		{% endif %}
+		{% if errors.contact_content_url %}
+		   <div class="control-group error">
+                        <label class="control-label" for="contact_content_url">商品URL</label>
+                        <div class="controls">
+                            <input id="contact_content_url" name="contact_content_url" type="text" class="span3" value="{{ contact.contact_content_url }}" /><br /> 
+                            <span class="help-inline">{{ errors.contact_content_url }}</span>
+			</div>
+                    </div>
+		{% else %}
+   		   <div class="control-group">
+                        <label class="control-label" for="contact_content_url">商品URL</label>
+                        <div class="controls">
+                            <input id="contact_content_url" name="contact_content_url" type="text" class="span3" value="{{ contact.contact_content_url }}" /><br /> 
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+		{% endif %}
+		{% if errors.contact_purchase_num %}
+	  	    <div class="control-group error">
+                        <label class="control-label" for="contact_purchase_num">購入番号</label>
+                        <div class="controls">
+                            <input id="contact_purchase_num" name="contact_purchase_num" type="text" class="span3" value="{{ contact.contact_purchase_num }}" /><br />
+                            <span class="help-inline">{{ errors.contact_purchase_num }}</span>
+                        </div>
+                    </div>
+		{% else %}
+		    <div class="control-group">
+                        <label class="control-label" for="contact_purchase_num">購入番号</label>
+                        <div class="controls">
+                            <input id="contact_purchase_num" name="contact_purchase_num" type="text" class="span3" value="{{ contact.contact_purchase_num }}" /><br />
+                            <span class="help-inline"></span>
+                        </div>
+                    </div>
+		{% endif %}
+		{% if errors.contact_privacy %}
+		　　<div class="control-group error">
+                <label class="control-label" for="contact_privacy">プライバシー</label>
+                <div class="controls">
+			        <input type="checkbox" id="contact_privacy" name="contact_privacy" value="利用規約に同意します">　利用規約に同意する<br />
+                    <span class="help-inline">{{ errors.contact_privacy }}</span>
+                </div>
+            </div>
+		{% else %}
+		　　<div class="control-group">
+                <label class="control-label" for="contact_privacy">プライバシー</label>
+                <div class="controls">
+			        <input type="checkbox" id="contact_privacy" name="contact_privacy" value="利用規約に同意します">　利用規約に同意する<br />
+                    <span class="help-inline"></span>
+                </div>
+            </div>
+		{% endif %}
+
+		    <div align="center">
+                        <button id="login" type="submit" class="btn btn-primary">入力内容確認</button>
+                    </div>	 
+
+		    <input type="hidden" name="prev_page" value="contact" />
+
+                </form>
+            </div>
+        </div>
+{% endblock %}
