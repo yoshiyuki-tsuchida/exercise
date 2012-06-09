@@ -3,7 +3,6 @@ require_once dirname(__FILE__) . '/Abstract.php';
 
 class Db_Dao_Content extends Db_Dao_Abstract
 {
-			
     /**
      * 一件のレコードを連想配列で返す
      *
@@ -14,13 +13,13 @@ class Db_Dao_Content extends Db_Dao_Abstract
         $dbh = $this->getDbHandler();
 
         $query  = "SELECT * FROM content WHERE id = ?";
-	$bind = array($content_id);
+        $bind = array($content_id);
 
         $statement = $dbh->prepare($query);
         $statement->execute($bind);
         $result = $statement->fetch(PDO::FETCH_ASSOC);
         return $result;
-    } 
+    }
 
     /**
      * 全レコード数を取得する
@@ -36,7 +35,7 @@ class Db_Dao_Content extends Db_Dao_Abstract
         $statement->execute();
         $result = $statement->fetch(PDO::FETCH_ASSOC);
         return intval($result['cnt']);
-    } 
+    }
 
     /**
      * 作成日が新しい順でコンテンツ情報の一覧を取得する

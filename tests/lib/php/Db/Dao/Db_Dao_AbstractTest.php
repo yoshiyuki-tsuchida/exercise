@@ -31,19 +31,19 @@ class Db_Dao_AbstractTest extends PHPUnit_Framework_TestCase
     }
     
     /**
-     * ãƒãƒ³ãƒ‰ãƒ©ã¯ä½¿ã„ã¾ã‚ã•ã‚Œã‚‹
+     * ¥Ï¥ó¥É¥é¤Ï»È¤¤¤Þ¤ï¤µ¤ì¤ë
      *
      */
-    public function testãƒãƒ³ãƒ‰ãƒ©ã¯ä½¿ã„ã¾ã‚ã•ã‚Œã‚‹()
+    public function test¥Ï¥ó¥É¥é¤Ï»È¤¤¤Þ¤ï¤µ¤ì¤ë()
     {
         $this->assertSame($this->object->getDbHandler(), $this->object->getDbHandler());
     }
     
     /**
-     * useTransactionã§ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ã‚¯ãƒ©ã‚¹ã‚’è¨­å®šã—ã¦ã‹ã‚‰getDbHandlerã‚’å‘¼ã³å‡ºã™ã¨ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ã‚¯ãƒ©ã‚¹ã‹ã‚‰DBHã‚’å–å¾—ã™ã‚‹
+     * useTransaction¤Ç¥¢¥¯¥Æ¥£¥Ö¤Ê¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¥¯¥é¥¹¤òÀßÄê¤·¤Æ¤«¤égetDbHandler¤ò¸Æ¤Ó½Ð¤¹¤È¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¥¯¥é¥¹¤«¤éDBH¤ò¼èÆÀ¤¹¤ë
      *
      */
-    public function test_useTransactionã§ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ã‚¯ãƒ©ã‚¹ã‚’è¨­å®šã—ã¦ã‹ã‚‰getDbHandlerã‚’å‘¼ã³å‡ºã™ã¨ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ã‚¯ãƒ©ã‚¹ã‹ã‚‰DBHã‚’å–å¾—ã™ã‚‹()
+    public function test_useTransaction¤Ç¥¢¥¯¥Æ¥£¥Ö¤Ê¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¥¯¥é¥¹¤òÀßÄê¤·¤Æ¤«¤égetDbHandler¤ò¸Æ¤Ó½Ð¤¹¤È¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¥¯¥é¥¹¤«¤éDBH¤ò¼èÆÀ¤¹¤ë()
     {
         $dbh = new stdClass();
         $transaction = $this->getMock('Db_Transaction', array('getDbHandler'));
@@ -54,10 +54,10 @@ class Db_Dao_AbstractTest extends PHPUnit_Framework_TestCase
     }
     
     /**
-     * useTransactionã§è¨­å®šã—ãŸãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ãŒéžã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã®å ´åˆãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ã®getDbHandlerã¯å‘¼ã³å‡ºã•ã‚Œãªã„
+     * useTransaction¤ÇÀßÄê¤·¤¿¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¤¬Èó¥¢¥¯¥Æ¥£¥Ö¤Î¾ì¹ç¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¤ÎgetDbHandler¤Ï¸Æ¤Ó½Ð¤µ¤ì¤Ê¤¤
      *
      */
-    public function test_useTransactionã§è¨­å®šã—ãŸãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ãŒéžã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã®å ´åˆãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ã®getDbHandlerã¯å‘¼ã³å‡ºã•ã‚Œãªã„()
+    public function test_useTransaction¤ÇÀßÄê¤·¤¿¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¤¬Èó¥¢¥¯¥Æ¥£¥Ö¤Î¾ì¹ç¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¤ÎgetDbHandler¤Ï¸Æ¤Ó½Ð¤µ¤ì¤Ê¤¤()
     {
         $transaction = $this->getMock('Db_Transaction', array('getDbHandler', 'isActive'));
         $transaction->expects($this->never())->method('getDbHandler');
@@ -68,39 +68,39 @@ class Db_Dao_AbstractTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * isInTransactionã¯ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ãŒã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ãªã‘ã‚Œã°falseã‚’è¿”ã™
+     * isInTransaction¤Ï¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¤¬¥»¥Ã¥È¤µ¤ì¤Æ¤¤¤Ê¤±¤ì¤Ðfalse¤òÊÖ¤¹
      */
-    public function test_isInTransactionã¯ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ãŒã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ãªã‘ã‚Œã°falseã‚’è¿”ã™()
+    public function test_isInTransaction¤Ï¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¤¬¥»¥Ã¥È¤µ¤ì¤Æ¤¤¤Ê¤±¤ì¤Ðfalse¤òÊÖ¤¹()
     {
         $condition = $this->object->isInTransaction();
-        $this->assertFalse($condition, "ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ãªã‘ã‚Œã°falseãŒè¿”ã‚‹ã¯ãš");
+        $this->assertFalse($condition, "¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¥ª¥Ö¥¸¥§¥¯¥È¤¬¥»¥Ã¥È¤µ¤ì¤Æ¤¤¤Ê¤±¤ì¤Ðfalse¤¬ÊÖ¤ë¤Ï¤º");
     }
 
     /**
-     * isInTransactionã¯ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ãŒã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ã¦ã‚‚DbTransactionãŒéžã‚¢ã‚¯ãƒ†ã‚£ãƒ–çŠ¶æ…‹ã§ã‚ã‚Œã°falseã‚’è¿”ã™
+     * isInTransaction¤Ï¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¤¬¥»¥Ã¥È¤µ¤ì¤Æ¤¤¤Æ¤âDbTransaction¤¬Èó¥¢¥¯¥Æ¥£¥Ö¾õÂÖ¤Ç¤¢¤ì¤Ðfalse¤òÊÖ¤¹
      */
-    public function test_isInTransactionã¯ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ãŒã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ã¦ã‚‚DbTransactionãŒéžã‚¢ã‚¯ãƒ†ã‚£ãƒ–çŠ¶æ…‹ã§ã‚ã‚Œã°falseã‚’è¿”ã™()
+    public function test_isInTransaction¤Ï¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¤¬¥»¥Ã¥È¤µ¤ì¤Æ¤¤¤Æ¤âDbTransaction¤¬Èó¥¢¥¯¥Æ¥£¥Ö¾õÂÖ¤Ç¤¢¤ì¤Ðfalse¤òÊÖ¤¹()
     {
         $transaction = $this->getMock('Db_Transaction', array('isActive'));
         $transaction->expects($this->once())->method('isActive')->will($this->returnValue(false));
         $this->object->useTransaction($transaction);
 
-        // isActiveãŒfalseã‚’è¿”ã—ãŸã‚‰isInTransaction()ã‚‚falseã‚’è¿”ã™ã¯ãš
+        // isActive¤¬false¤òÊÖ¤·¤¿¤éisInTransaction()¤âfalse¤òÊÖ¤¹¤Ï¤º
         $condition = $this->object->isInTransaction();
-        $this->assertFalse($condition, "isActiveãŒfalseã‚’è¿”ã—ãŸã‚‰isInTransaction()ã‚‚falseã‚’è¿”ã™ã¯ãš");
+        $this->assertFalse($condition, "isActive¤¬false¤òÊÖ¤·¤¿¤éisInTransaction()¤âfalse¤òÊÖ¤¹¤Ï¤º");
     }
 
     /**
-     * isInTransactionã¯ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ãŒã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ã‚Œã°trueã‚’è¿”ã™
+     * isInTransaction¤Ï¥¢¥¯¥Æ¥£¥Ö¤Ê¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¤¬¥»¥Ã¥È¤µ¤ì¤Æ¤¤¤ì¤Ðtrue¤òÊÖ¤¹
      */
-    public function test_isInTransactionã¯ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ãŒã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ã‚Œã°trueã‚’è¿”ã™()
+    public function test_isInTransaction¤Ï¥¢¥¯¥Æ¥£¥Ö¤Ê¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¤¬¥»¥Ã¥È¤µ¤ì¤Æ¤¤¤ì¤Ðtrue¤òÊÖ¤¹()
     {
-        // åˆæœŸçŠ¶æ…‹ã§ã¯DbTransactionã¯ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã§isActive()ã¯truã‚’è¿”ã™
+        // ½é´ü¾õÂÖ¤Ç¤ÏDbTransaction¤Ï¥¢¥¯¥Æ¥£¥Ö¤ÇisActive()¤Ïtru¤òÊÖ¤¹
         $transaction = new Db_Transaction();
-        $this->assertTrue($transaction->isActive(), "åˆæœŸçŠ¶æ…‹ã§ã¯DbTransactionã¯ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãªã¯ãš");
+        $this->assertTrue($transaction->isActive(), "½é´ü¾õÂÖ¤Ç¤ÏDbTransaction¤Ï¥¢¥¯¥Æ¥£¥Ö¤Ê¤Ï¤º");
 
         $this->object->useTransaction($transaction);
         $condition = $this->object->isInTransaction();
-        $this->assertTrue($condition, "ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ãŒã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ã¦ã‹ã¤ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ã§ã‚ã‚Œã°isInTransactionã¯trueã‚’è¿”ã™ã¯ãš");
+        $this->assertTrue($condition, "¥È¥é¥ó¥¶¥¯¥·¥ç¥ó¤¬¥»¥Ã¥È¤µ¤ì¤Æ¤¤¤Æ¤«¤Ä¥¢¥¯¥Æ¥£¥Ö¤Ç¤¢¤ì¤ÐisInTransaction¤Ïtrue¤òÊÖ¤¹¤Ï¤º");
     }
 }

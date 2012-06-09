@@ -22,7 +22,7 @@ git submodule update;
 
 cd migration
 echo -e "\\n\033[0;43mEnter mysql root password. \033[0;39m"
-mysql -u root -p <$INIT_SQL;
+/Applications/MAMP/Library/bin/mysql -u root -p <$INIT_SQL;
 
 echo -e "\\n\033[0;43mExicution of all sql files.\033[0;39m"
 for sqlfile in *.sql
@@ -31,7 +31,7 @@ do
     if [ $sqlfile != ${INIT_SQL} ] 
     then
         echo "<$sqlfile"
-        mysql -u ecsite_user -pecsite_pass ecsite_db <$sqlfile
+        /Applications/MAMP/Library/bin/mysql -u ecsite_user -pecsite_pass ecsite_db <$sqlfile
     fi
 done
 

@@ -13,7 +13,7 @@ class Db_Dao_ContentTest extends PHPUnit_Extensions_Database_TestCase
     }
 
     protected function getConnection()
-    {    
+    {
         return $this->createDefaultDBConnection($this->dbh, 'demo');
     }
 
@@ -29,85 +29,85 @@ class Db_Dao_ContentTest extends PHPUnit_Extensions_Database_TestCase
         parent::setUp();
     }
 
-    public function test_ã‚³ãƒ³ãƒ†ãƒ³ãƒ„IDã‹ã‚‰ä¸€ä»¶ã®ã‚³ãƒ³ãƒ†ãƒ³ãƒ„æƒ…å ±ã‚’å–å¾—å‡ºæ¥ã‚‹()
+    public function test_¥³¥ó¥Æ¥ó¥ÄID¤«¤é°ì·ï¤Î¥³¥ó¥Æ¥ó¥Ä¾ðÊó¤ò¼èÆÀ½ÐÍè¤ë()
     {
       $id = 3;
       $expected = array(
-		      'id' => '3',
-		      'title' => 'Content3',
-		      'author' => 'Author3',
-		      'price' => '2000',
-		      'image_path' => 'http://placehold.it/260x180',
-		      'description' => 'DescDesc',
-		      'category' => '1',
-		      'created_at' => '2012-02-01 00:00:00',
-		      'updated_at' => null,
-		      );
+                        'id'          => '3',
+                        'title'       => 'Content3',
+                        'author'      => 'Author3',
+                        'price'       => '2000',
+                        'image_path'  => 'http://placehold.it/260x180',
+                        'description' => 'DescDesc',
+                        'category'    => '1',
+                        'created_at'  => '2012-02-01 00:00:00',
+                        'updated_at'  => null,
+                        );
       $this->assertEquals($expected, $this->obj->findById($id));
     }
      
-    public function test_ã‚³ãƒ³ãƒ†ãƒ³ãƒ„æƒ…å ±ã®ä»¶æ•°ã‚’å–å¾—ã§ãã‚‹ã“ã¨()
+    public function test_¥³¥ó¥Æ¥ó¥Ä¾ðÊó¤Î·ï¿ô¤ò¼èÆÀ¤Ç¤­¤ë¤³¤È()
     {
         $this->assertEquals(9, $this->obj->countAll());
     }
 
-    public function test_æŒ‡å®šã—ãŸå–å¾—ä½ç½®ã‹ã‚‰å–å¾—ä»¶æ•°åˆ†ã®ã‚³ãƒ³ãƒ†ãƒ³ãƒ„æƒ…å ±ãŒå–å¾—ã§ãã‚‹ã“ã¨()
+    public function test_»ØÄê¤·¤¿¼èÆÀ°ÌÃÖ¤«¤é¼èÆÀ·ï¿ôÊ¬¤Î¥³¥ó¥Æ¥ó¥Ä¾ðÊó¤¬¼èÆÀ¤Ç¤­¤ë¤³¤È()
     {
         $expected = array(
-            array(
-                'id' => '5',
-                'title' => 'Content5',
-                'author' => 'Author1',
-                'price' => '100',
-                'image_path' => 'http://placehold.it/260x180',
-                'description' => 'DescDesc',
-                'category' => '1',
-                '5',
-                'Content5',
-                'Author1',
-                '100',
-                'http://placehold.it/260x180',
-                'DescDesc',
-                '1'
-            ),
-            array(
-                'id' => '4',
-                'title' => 'Content4',
-                'author' => 'Author4',
-                'price' => '0',
-                'image_path' => 'http://placehold.it/260x180',
-                'description' => 'DescDesc',
-                'category' => '2',
-                '4',
-                'Content4',
-                'Author4',
-                '0',
-                'http://placehold.it/260x180',
-                'DescDesc',
-                '2'
-            ),
-            array(
-                'id' => '3',
-                'title' => 'Content3',
-                'author' => 'Author3',
-                'price' => '2000',
-                'image_path' => 'http://placehold.it/260x180',
-                'description' => 'DescDesc',
-                'category' => '1',
-                '3',
-                'Content3',
-                'Author3',
-                '2000',
-                'http://placehold.it/260x180',
-                'DescDesc',
-                '1'
-            )
-        );
+                          array(
+                                'id'          => '5',
+                                'title'       => 'Content5',
+                                'author'      => 'Author1',
+                                'price'       => '100',
+                                'image_path'  => 'http://placehold.it/260x180',
+                                'description' => 'DescDesc',
+                                'category'    => '1',
+                                '5',
+                                'Content5',
+                                'Author1',
+                                '100',
+                                'http://placehold.it/260x180',
+                                'DescDesc',
+                                '1'
+                                ),
+                          array(
+                                'id'          => '4',
+                                'title'       => 'Content4',
+                                'author'      => 'Author4',
+                                'price'       => '0',
+                                'image_path'  => 'http://placehold.it/260x180',
+                                'description' => 'DescDesc',
+                                'category'    => '2',
+                                '4',
+                                'Content4',
+                                'Author4',
+                                '0',
+                                'http://placehold.it/260x180',
+                                'DescDesc',
+                                '2'
+                                ),
+                          array(
+                                'id'          => '3',
+                                'title'       => 'Content3',
+                                'author'      => 'Author3',
+                                'price'       => '2000',
+                                'image_path'  => 'http://placehold.it/260x180',
+                                'description' => 'DescDesc',
+                                'category'    => '1',
+                                '3',
+                                'Content3',
+                                'Author3',
+                                '2000',
+                                'http://placehold.it/260x180',
+                                'DescDesc',
+                                '1'
+                                )
+                          );
 
         $this->assertEquals($expected, $this->obj->findLatestList(2, 3));
     }
 
-    public function test_ãƒ‡ãƒ¼ã‚¿æ•°ä»¥ä¸Šã®å–å¾—ä½ç½®ã‚’æŒ‡å®šã—ãŸå ´åˆç©ºã®é…åˆ—ãŒè¿”ã‚‹ã“ã¨()
+    public function test_¥Ç¡¼¥¿¿ô°Ê¾å¤Î¼èÆÀ°ÌÃÖ¤ò»ØÄê¤·¤¿¾ì¹ç¶õ¤ÎÇÛÎó¤¬ÊÖ¤ë¤³¤È()
     {
         $this->assertEquals(array(), $this->obj->findLatestList(100, 3));
     }

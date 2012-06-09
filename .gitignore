@@ -1,0 +1,8 @@
+# Emacs Backup
+*~
+
+# Vim
+.swp
+
+!.gitignore
+!.htaccess

@@ -29,7 +29,7 @@ class Db_Dao_UserTest extends PHPUnit_Extensions_Database_TestCase
         parent::setUp();
     }
 
-    public function test_æŒ‡å®šã—ãŸIDã®ãƒ¦ãƒ¼ã‚¶ãƒ¼æƒ…å ±ãŒå–å¾—ã§ãã‚‹ã“ã¨()
+    public function test_»ØÄê¤·¤¿ID¤Î¥æ¡¼¥¶¡¼¾ğÊó¤¬¼èÆÀ¤Ç¤­¤ë¤³¤È()
     {
         $expected = array(
             'id' => '1',
@@ -48,13 +48,13 @@ class Db_Dao_UserTest extends PHPUnit_Extensions_Database_TestCase
         $this->assertEquals($expected, $result);
     }
 
-    public function test_æŒ‡å®šã—ãŸIDã®ãƒ¦ãƒ¼ã‚¶ãƒ¼æƒ…å ±ãŒãªã„å ´åˆfalseãŒè¿”ã‚‹ã“ã¨()
+    public function test_»ØÄê¤·¤¿ID¤Î¥æ¡¼¥¶¡¼¾ğÊó¤¬¤Ê¤¤¾ì¹çfalse¤¬ÊÖ¤ë¤³¤È()
     {
         $result = $this->obj->findByUserId(9999);
         $this->assertFalse($result);
     }
 
-    public function test_æŒ‡å®šã—ãŸåå‰ã®ãƒ¦ãƒ¼ã‚¶ãƒ¼æƒ…å ±ãŒå–å¾—ã§ãã‚‹ã“ã¨()
+    public function test_»ØÄê¤·¤¿Ì¾Á°¤Î¥æ¡¼¥¶¡¼¾ğÊó¤¬¼èÆÀ¤Ç¤­¤ë¤³¤È()
     {
         $expected = array(
             'id' => '1',
@@ -70,19 +70,19 @@ class Db_Dao_UserTest extends PHPUnit_Extensions_Database_TestCase
         $this->assertEquals($expected, $result);
     }
 
-    public function test_æŒ‡å®šã—ãŸåå‰ã®ãƒ¦ãƒ¼ã‚¶æƒ…å ±ãŒãªã„å ´åˆfalseãŒè¿”ã‚‹ã“ã¨()
+    public function test_»ØÄê¤·¤¿Ì¾Á°¤Î¥æ¡¼¥¶¾ğÊó¤¬¤Ê¤¤¾ì¹çfalse¤¬ÊÖ¤ë¤³¤È()
     {
         $result = $this->obj->findByName('a');
         $this->assertFalse($result);
     }
 
-    public function test_æŒ‡å®šã—ãŸåå‰ã®ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒã„ã‚‹å ´åˆãƒ¦ãƒ¼ã‚¶ãƒ¼æ•°ã‚’å–å¾—ã§ãã‚‹ã“ã¨()
+    public function test_»ØÄê¤·¤¿Ì¾Á°¤Î¥æ¡¼¥¶¡¼¤¬¤¤¤ë¾ì¹ç¥æ¡¼¥¶¡¼¿ô¤ò¼èÆÀ¤Ç¤­¤ë¤³¤È()
     {
         $result = $this->obj->countByName('test1');
         $this->assertSame(1, $result);
     }
 
-    public function test_æŒ‡å®šã—ãŸåå‰ã®ãƒ¦ãƒ¼ã‚¶ãƒ¼ãŒã„ãªã„å ´åˆ0ãŒå–å¾—ã§ãã‚‹ã“ã¨()
+    public function test_»ØÄê¤·¤¿Ì¾Á°¤Î¥æ¡¼¥¶¡¼¤¬¤¤¤Ê¤¤¾ì¹ç0¤¬¼èÆÀ¤Ç¤­¤ë¤³¤È()
     {
         $result = $this->obj->countByName('test9999999');
         $this->assertSame(0, $result);
@@ -104,7 +104,7 @@ class Db_Dao_UserTest extends PHPUnit_Extensions_Database_TestCase
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function test_ãƒ¦ãƒ¼ã‚¶ãƒ¼æƒ…å ±ãŒè¿½åŠ ã§ãã‚‹ã“ã¨()
+    public function test_¥æ¡¼¥¶¡¼¾ğÊó¤¬ÄÉ²Ã¤Ç¤­¤ë¤³¤È()
     {
         $name = 'TEST-USER';
         $password = 'TEST-USER-PASS';
